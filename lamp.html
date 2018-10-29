@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<metaname="viewport" content="width=device-width, initial-scale=1" />
+		<title>勇哥的台灯</title>
+		<link rel="stylesheet" href="css/lamp.css">
+		<script language="javascript" type="text/javascript">
+			function py() {
+				var req = new XMLHttpRequest();
+				req.open("GET", "/conlamp.php", true);
+				req.send();
+			}
+
+			function chtext() {
+				text1 = document.getElementById("text1")
+				if(text1.innerHTML == "打开台灯") {
+					text1.innerHTML = "关闭台灯";
+					py();
+				} else
+					text1.innerHTML = "打开台灯";
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="head">
+			<p class="mylamp">我的电器</p>
+		</div>
+		<div class="hr"></div>
+		<div class="blocks cen" id="text1" onclick="chtext()">打开台灯</div>
+		<!--<div class="blocks cen" id="text1" onclick="chtext()">123台灯</div>
+		<div class="blocks cen" id="text1" onclick="chtext()">打开台灯</div>
+		<div class="blocks cen" id="text1" onclick="chtext()">打开台灯</div>-->
+	</body>
+</html>
